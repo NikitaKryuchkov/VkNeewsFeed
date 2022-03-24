@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 protocol Networking {
     func request(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> Void)
@@ -22,17 +21,17 @@ final class NetworkService: Networking {
     
     func request(path: String, params: [String : String], completion: @escaping (Data?, Error?) -> Void) {
         guard let token = authService.token else { return }
-        
+                
         var allParams = params
         allParams["access_token"] = token
         allParams["v"] = API.version
         
-        guard let url = self.url(from: path, params: params) else { return }
+        guard let url = self.url(from: path, params: allParams) else { return }
         
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
         task.resume()
-        print(url)
+        print("\(url)")
     }
     
     private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {
@@ -45,12 +44,12 @@ final class NetworkService: Networking {
     
     private func url(from path: String, params: [String: String]) -> URL? {
         var components = URLComponents()
-        
+
         components.scheme = API.scheme
         components.host = API.host
         components.path = API.newsFeed
         components.queryItems = params.map { URLQueryItem(name: $0, value: $1) }
-        
+
         return components.url
     }
 }

@@ -20,15 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        authService = AuthService()
+        
+        self.authService = AuthService()
         authService.delegate = self
+        
         let authVC: AuthViewController = AuthViewController.loadFromStoryboard()
+        
         window?.rootViewController = authVC
         window?.makeKeyAndVisible()
     }
@@ -69,14 +70,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
 
     //MARK: - AuthServiceDelegate
     
-    func authServiceShouldShow(viewController: UIViewController) {
+    func authServiceShouldShow(_ viewController: UIViewController) {
         print(#function)
         window?.rootViewController?.present(viewController, animated: true, completion: nil)
     }
     
     func authServiceSignIn() {
         print(#function)
-        let feedVC: FeedViewController = FeedViewController.loadFromStoryboard()
+        let feedVC: NewsfeedViewController = NewsfeedViewController.loadFromStoryboard()
         let navVC = UINavigationController(rootViewController: feedVC)
         window?.rootViewController = navVC
     }

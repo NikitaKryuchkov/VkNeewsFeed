@@ -9,19 +9,16 @@ import UIKit
 
 class AuthViewController: UIViewController {
 
-    @IBAction func signInTouch(_ sender: Any) {
-        authSrvice.wakeUpSession()
-    }
-    
     private var authSrvice: AuthService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authSrvice = SceneDelegate.shared().authService
-        view.backgroundColor = .red
+        view.backgroundColor = .white
     }
-
     
-
+    @IBAction func signInTouch(_ sender: Any) {
+        authSrvice.wakeUpSession()
+    }
 }
 
