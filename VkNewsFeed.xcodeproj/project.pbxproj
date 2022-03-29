@@ -21,6 +21,8 @@
 		FAC795E927DE6D5800B75557 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC795E827DE6D5800B75557 /* FeedViewController.swift */; };
 		FAC795EB27DE6D6C00B75557 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC795EA27DE6D6C00B75557 /* FeedViewController.storyboard */; };
 		FAC795F027DE715300B75557 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC795EF27DE715300B75557 /* UIViewController + Storyboard.swift */; };
+		FACDE70427F23E4300BDAE26 /* NewsfeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDE70327F23E4300BDAE26 /* NewsfeedCell.swift */; };
+		FACDE70627F23E9400BDAE26 /* NewsfeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACDE70527F23E9400BDAE26 /* NewsfeedCell.xib */; };
 		FADBABA727DFB54600C2D0F4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBABA627DFB54600C2D0F4 /* NetworkService.swift */; };
 		FADBABA927DFC3C500C2D0F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBABA827DFC3C500C2D0F4 /* API.swift */; };
 		FAF1D57D27ECF2A30068F257 /* NewsfeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF1D57C27ECF2A30068F257 /* NewsfeedViewController.storyboard */; };
@@ -64,6 +66,8 @@
 		FAC795E827DE6D5800B75557 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		FAC795EA27DE6D6C00B75557 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		FAC795EF27DE715300B75557 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
+		FACDE70327F23E4300BDAE26 /* NewsfeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCell.swift; sourceTree = "<group>"; };
+		FACDE70527F23E9400BDAE26 /* NewsfeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsfeedCell.xib; sourceTree = "<group>"; };
 		FADBABA627DFB54600C2D0F4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FADBABA827DFC3C500C2D0F4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FAF1D57C27ECF2A30068F257 /* NewsfeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsfeedViewController.storyboard; sourceTree = "<group>"; };
@@ -185,9 +189,19 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		FACDE70227F23E2200BDAE26 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FACDE70327F23E4300BDAE26 /* NewsfeedCell.swift */,
+				FACDE70527F23E9400BDAE26 /* NewsfeedCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FAFB479427EBA4E700CCBE0B /* Newsfeed */ = {
 			isa = PBXGroup;
 			children = (
+				FACDE70227F23E2200BDAE26 /* Cell */,
 				FAF1D57C27ECF2A30068F257 /* NewsfeedViewController.storyboard */,
 				FAFB479927EBA5DA00CCBE0B /* NewsfeedViewController.swift */,
 				FAFB479A27EBA5DA00CCBE0B /* NewsfeedInteractor.swift */,
@@ -264,6 +278,7 @@
 				FAC795E427DE05CC00B75557 /* AuthViewController.storyboard in Resources */,
 				FAF1D57D27ECF2A30068F257 /* NewsfeedViewController.storyboard in Resources */,
 				FA89CC8C27DD060C00BCCC9E /* Assets.xcassets in Resources */,
+				FACDE70627F23E9400BDAE26 /* NewsfeedCell.xib in Resources */,
 				FAC795EB27DE6D6C00B75557 /* FeedViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +336,7 @@
 				FA89CC8327DD060B00BCCC9E /* AppDelegate.swift in Sources */,
 				FAC795E927DE6D5800B75557 /* FeedViewController.swift in Sources */,
 				FAA3A79A27E8FE37008260F1 /* FeedRespose.swift in Sources */,
+				FACDE70427F23E4300BDAE26 /* NewsfeedCell.swift in Sources */,
 				FAA3A79C27E90472008260F1 /* NetworkDataFetcher.swift in Sources */,
 				FAFB47A027EBA5DA00CCBE0B /* NewsfeedViewController.swift in Sources */,
 				FAC795F027DE715300B75557 /* UIViewController + Storyboard.swift in Sources */,
