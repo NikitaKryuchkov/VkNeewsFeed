@@ -19,12 +19,24 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
   
       switch response {
           
-      case .some:
-          print(".some Presenter")
-      case .presentNewsfeed:
-          print(".presentNewsfeed Presenter")
-          viewController?.displayData(viewModel: .displayNewsfeed)
+      case let .presentNewsfeed(feed):
+          let cells = feed.items.map { cellViewModal(from: $0)}
+          let feedViewModal = FeedViewModal(cells: cells)
+          
+          viewController?.displayData(viewModel: .displayNewsfeed(feedViewModal: feedViewModal))
       }
   }
   
+    private func cellViewModal(from feedItem: FeedItem) -> FeedViewModal.Cell {
+        return FeedViewModal.Cell.init(
+            iconUrlString: "",
+            name: "future name",
+            date: "future date",
+            text: feedItem.text,
+            likes: String(feedItem.likes?.count ?? 0),
+            comments: String(feedItem.comments?.count ?? 0),
+            shares: String(feedItem.reports?.count ?? 0),
+            views: String(feedItem.views?.count ?? 0)
+        )
+    }
 }
