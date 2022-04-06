@@ -23,7 +23,7 @@ class NewsfeedCell: UITableViewCell {
     
     static let reuseId = "NewsfeedCell"
     
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconImageView: WebImageView!
     @IBOutlet weak var nameLable: UILabel!
     @IBOutlet weak var dateLable: UILabel!
     @IBOutlet weak var postLable: UILabel!
@@ -44,5 +44,6 @@ class NewsfeedCell: UITableViewCell {
         commentsLable.text = viewModel.comments
         sharesLable.text = viewModel.shares
         viewsLable.text = viewModel.views
+        iconImageView.set(imageURL: viewModel.iconUrlString)
     }
 }
