@@ -39,6 +39,8 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
     private func cellViewModal(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModal.Cell {
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         
+        let photoAttachment = self.photoAttachment(feedItem: feedItem)
+        
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
         
@@ -50,7 +52,8 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
             likes: String(feedItem.likes?.count ?? 0),
             comments: String(feedItem.comments?.count ?? 0),
             shares: String(feedItem.reposts?.count ?? 0),
-            views: String(feedItem.views?.count ?? 0)
+            views: String(feedItem.views?.count ?? 0),
+            photoAttachment: photoAttachment
         )
     }
     
@@ -60,5 +63,17 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         let profileRepresentable = profilesOrGroups.first { $0.id == normalSourceId }
         
         return profileRepresentable
+    }
+    
+    private func photoAttachment(feedItem: FeedItem) -> FeedViewModal.FeedCellPhotoAttachment? {
+        guard let photos = feedItem.attachments?.compactMap( { $0.photo }), let firstPhoto = photos.first else {
+            return nil
+        }
+        
+        return FeedViewModal.FeedCellPhotoAttachment.init(
+            photoUrlString: firstPhoto.srcBIG,
+            width: firstPhoto.width,
+            height: firstPhoto.height
+        )
     }
 }

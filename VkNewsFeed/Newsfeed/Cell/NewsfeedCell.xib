@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z8J-Zn-rjq" userLabel="BottomView">
-                        <rect key="frame" x="0.0" y="171" width="415" height="49"/>
+                        <rect key="frame" x="0.0" y="176" width="415" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-aA-iNb">
@@ -125,13 +125,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rg-KA-WiS">
-                        <rect key="frame" x="12" y="67" width="388" height="96"/>
+                        <rect key="frame" x="12" y="67" width="388" height="45"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NS-RW-7VK" customClass="WebImageView" customModule="VkNewsFeed" customModuleProvider="target">
+                        <rect key="frame" x="12" y="120" width="388" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -140,6 +144,7 @@
                 <outlet property="iconImageView" destination="E8F-BH-XHH" id="vhe-s4-WcO"/>
                 <outlet property="likesLable" destination="Lhu-jt-6gz" id="k0B-jX-3HJ"/>
                 <outlet property="nameLable" destination="DvV-Dd-6vh" id="qeh-NU-4Df"/>
+                <outlet property="postImageView" destination="4NS-RW-7VK" id="6s0-U4-DIx"/>
                 <outlet property="postLable" destination="9Rg-KA-WiS" id="GIh-jO-sVf"/>
                 <outlet property="sharesLable" destination="1C5-Iw-nEw" id="9Bz-hL-x4Y"/>
                 <outlet property="viewsLable" destination="F55-w2-iZ3" id="hnr-M5-cfQ"/>

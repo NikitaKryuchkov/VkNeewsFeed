@@ -39,6 +39,13 @@ struct FeedViewModal {
         var comments: String?
         var shares: String?
         var views: String?
+        var photoAttachment: FeedCeelPhotoAttachmentViewModal?
+    }
+    
+    struct FeedCellPhotoAttachment: FeedCeelPhotoAttachmentViewModal {
+        var photoUrlString: String?
+        var width: Int
+        var height: Int        
     }
     
     let cells: [Cell]
