@@ -39,12 +39,19 @@ class NewsfeedCell: UITableViewCell {
     @IBOutlet weak var commentsLable: UILabel!
     @IBOutlet weak var sharesLable: UILabel!
     @IBOutlet weak var viewsLable: UILabel!
+    @IBOutlet weak var cardView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
         iconImageView.clipsToBounds = true
+        
+        cardView.layer.cornerRadius = 10
+        cardView.clipsToBounds = true
+        
+        backgroundColor = .clear
+        selectionStyle = .none
     }
     
     func set(viewModel: FeedCellViewModel) {
